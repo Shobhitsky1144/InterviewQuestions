@@ -27,7 +27,7 @@ def isSubSequence(str1, str2):
 # Driver Program
 
 
-str1 = "gksrek"
-str2 = "geeksforgeeks"
+str1 = "hello"
+str2 = "Hello"
 
 print "Yes" if isSubSequence(str1, str2) else "No"
