@@ -21,8 +21,6 @@ def isSubSequence(str1, str2):
 	# then j is equal to m
 	return j == m
 
-# Driver Program
-
 
 str1 = "gksrek"
 str2 = "geeksforgeeks"
