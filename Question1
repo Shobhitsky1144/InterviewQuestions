@@ -1,33 +1,33 @@
-# Iterative Python program to check if a
-# string is subsequence of another string
+# Recursive Python program to check
+# if a string is subsequence
+# of another string
 
-# Returns true if str1 is a subsequence of str2
+# Returns true if str1[] is a
+# subsequence of str2[].
 
-def isSubSequence(str1, str2):
-	m = len(str1)
-	n = len(str2)
+def isSubSequence(string1, string2, m, n):
+	# Base Cases
+	if m == 0:
+		return True
+	if n == 0:
+		return False
 
-	j = 0 # Index of str1
-	i = 0 # Index of str2
+	# If last characters of two
+	# strings are matching
+	if string1[m-1] == string2[n-1]:
+		return isSubSequence(string1, string2, m-1, n-1)
 
-	# Traverse both str1 and str2
-	# Compare current character of str2 with
-	# first unmatched character of str1
-	# If matched, then move ahead in str1
-
-	while j < m and i < n:
-		if str1[j] == str2[i]:
-			j = j+1
-		i = i + 1
-
-	# If all characters of str1 matched,
-	# then j is equal to m
-	return j == m
-
-# Driver Program
+	# If last characters are not matching
+	return isSubSequence(string1, string2, m, n-1)
 
 
-str1 = "hello"
-str2 = "Hello"
+# Driver program to test the above function
+string1 = "hello"
+string2 = "Hello"
 
-print "Yes" if isSubSequence(str1, str2) else "No"
+if isSubSequence(string1, string2, len(string1), len(string2)):
+	print "Yes"
+else:
+	print "No"
+
+
